@@ -13,7 +13,7 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--display_freq', type=int, default=400, help='frequency of showing training results on screen')
         parser.add_argument('--display_ncols', type=int, default=4, help='if positive, display all images in a single visdom web panel with certain number of images per row.')
         parser.add_argument('--display_id', type=int, default=None, help='window id of the web display. Default is random window id')
-        parser.add_argument('--display_server', type=str, default="http://c7cc6f5724d2", help='visdom server of the web display')
+        parser.add_argument('--display_server', type=str, default="http://localhost", help='visdom server of the web display')
         parser.add_argument('--display_env', type=str, default='main', help='visdom display environment name (default is "main")')
         parser.add_argument('--display_port', type=int, default=8097, help='visdom port of the web display')
         parser.add_argument('--update_html_freq', type=int, default=1000, help='frequency of saving training results to html')
@@ -30,8 +30,8 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--pretrained_name', type=str, default=None, help='resume training from another checkpoint')
 
         # training parameters
-        parser.add_argument('--n_epochs', type=int, default=200, help='number of epochs with the initial learning rate')
-        parser.add_argument('--n_epochs_decay', type=int, default=200, help='number of epochs to linearly decay learning rate to zero')
+        parser.add_argument('--n_epochs', type=int, default=10, help='number of epochs with the initial learning rate')
+        parser.add_argument('--n_epochs_decay', type=int, default=3, help='number of epochs to linearly decay learning rate to zero')
         parser.add_argument('--beta1', type=float, default=0.5, help='momentum term of adam')
         parser.add_argument('--beta2', type=float, default=0.999, help='momentum term of adam')
         parser.add_argument('--lr', type=float, default=0.0002, help='initial learning rate for adam')
